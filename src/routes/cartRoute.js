@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { listarItens, criarCarrinho, deletarCarrinho } = require('../controllers/cartController');
+const { listarItens, criarCarrinho, limparCarrinho } = require('../controllers/cartController');
 
 
 

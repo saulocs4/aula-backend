@@ -22,7 +22,7 @@ async function alterarItensRepository (id, quantity) {
     }
 }
 
-async function deletartensRepository (id) {
+async function limpartensRepository (id) {
 
     try {
         const item = await prisma.cartItem.delete({

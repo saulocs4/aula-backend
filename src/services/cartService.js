@@ -1,4 +1,4 @@
-const { criarCarrinhoRepository, listarCarrinhoRepository, limparCarrinhoRepository } = require("../repositories/cartRepositore");
+const { criarCarrinhoRepository, listarCarrinhoRepository, limparCarrinhoRepository } = require("../repositories/cartRepository");
 
 async function criarCarrinhoService(user_id) {
     return await criarCarrinhoRepository(user_id)

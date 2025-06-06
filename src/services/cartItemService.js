@@ -1,5 +1,5 @@
 const { cartCheck } = require("../repositories/cartRepositore")
-const {inserirItensRepository, alterarItensRepository, deletartensRepository} = require("../repositories/cartItemReposite")
+const {inserirItensRepository, alterarItensRepository, limparItensRepository} = require("../repositories/cartItemReposite")
 
 async function inserirItensService(cart_id, product_id, quantity) {
     const carrinhoCheck = await cartCheck(cart_id)
@@ -35,12 +35,12 @@ async function alterarItensService(id, quantity) {
     return result
 }
 
-async function deletarItensService(id) {
-    return await deletarItensService(id)
+async function limparItensService(id) {
+    return await limparItensService(id)
 }
 
 module.exports = {
     inserirItensService,
     alterarItensService,
-    deletarItensService
+    limparItensService
 }
