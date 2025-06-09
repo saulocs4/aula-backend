@@ -1,4 +1,4 @@
-const prisma = require("../config/prisma.js")
+const prisma = require("../config/prisma")
 
 function criarUsuario(data) {
     return prisma.user.create({data})

@@ -1,4 +1,5 @@
-const prisma = require("../config/prisma.js")
+const prisma = require("../config/prisma")
+
 
 function cartCheck(cart_id) {
     return prisma.cart.findUnique({
@@ -19,9 +20,9 @@ function criarCarrinhoRepository(user_id) {
     })
 }
 
-function limparCarrinhoRepository(cart_id) {
+ function limparCarrinhoRepository(cart_id) {
     return prisma.cartItem.delete({
-            where: {id: Number(cart_id)}
+        where: {id: Number(cart_id)}
     })
 }
 

@@ -3,8 +3,8 @@ const {registrarUsuario, loginUsuario} = require('../services/userService.js')
 async function registrar(req, res) {
     const {firstname, surname, email, password} = req.body
     try {
-       const user = await registrarUsuario(firstname, surname, email, password) 
-       res.status(201).json(user)
+        const user = await registrarUsuario(firstname, surname, email, password)
+        res.status(201).json(user)
     } catch (error) {
         res.status(400).json({error: error.message})
     }
@@ -18,6 +18,7 @@ async function login(req, res) {
     } catch (error) {
         res.status(401).json({error: error.message})
     }
+    
 }
 
 module.exports = {
