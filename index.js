@@ -1,7 +1,7 @@
 const express = require('express');
-const cartRoute = require('./src/routes/cartRoute.js')
-const cartItemRoute = require('./src/routes/cartItemRoute.js')
-const userRoute = require('./src/routes/userRoute.js')
+const cartRoute = require('./src/routes/cartRoute.js');
+const cartItemRoute = require('./src/routes/cartItemRoute.js');
+const userRoute = require('./src/routes/userRouter.js');
 require('dotenv').config()
 
 
