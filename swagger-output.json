@@ -2,8 +2,8 @@
   "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
-    "title": "My API",
-    "description": "Some description..."
+    "title": "API Node.js com Express",
+    "description": "Uma API de exemplo documentada com Swagger"
   },
   "servers": [
     {
@@ -13,6 +13,10 @@
   "paths": {
     "/": {
       "get": {
+        "tags": [
+          "documentacao"
+        ],
+        "summary": "Redireciona para documentação API",
         "description": "",
         "responses": {
           "default": {
@@ -21,18 +25,11 @@
         }
       }
     },
-    "/boas-vindas": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/v1/cart/{id}/itens": {
       "get": {
+        "tags": [
+          "carrinho"
+        ],
         "description": "",
         "parameters": [
           {
@@ -60,6 +57,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "carrinho"
+        ],
         "description": "",
         "parameters": [
           {
@@ -89,6 +89,9 @@
     },
     "/v1/cart/": {
       "post": {
+        "tags": [
+          "carrinho"
+        ],
         "description": "",
         "responses": {
           "201": {
@@ -108,6 +111,10 @@
     },
     "/v1/item/": {
       "post": {
+        "tags": [
+          "carrinho-item"
+        ],
+        "summary": "Insere itens no carrinho",
         "description": "",
         "parameters": [
           {
@@ -156,6 +163,10 @@
     },
     "/v1/item/{id}": {
       "put": {
+        "tags": [
+          "carrinho-item"
+        ],
+        "summary": "Altera a quantidade de itens do carrinho",
         "description": "",
         "parameters": [
           {
@@ -191,6 +202,10 @@
         }
       },
       "delete": {
+        "tags": [
+          "carrinho-item"
+        ],
+        "summary": "Deleta itens de um carrinho",
         "description": "",
         "parameters": [
           {
@@ -214,7 +229,11 @@
     },
     "/v1/user/register": {
       "post": {
-        "description": "",
+        "tags": [
+          "usuario"
+        ],
+        "summary": "Registro de novo usuário",
+        "description": "Cria um novo usuário no sistema com nome, sobrenome, email e senha válidos",
         "responses": {
           "201": {
             "description": "Created"
@@ -250,13 +269,17 @@
     },
     "/v1/user/login": {
       "post": {
-        "description": "",
+        "tags": [
+          "usuario"
+        ],
+        "summary": "Login de usuário",
+        "description": "Autentica um usuário com email e senha. Retorna um token JWT que deve ser usado para acessar rotas protegidas.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Login efetuado com sucesso"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Não autorizado. Token de acesso ausente"
           }
         },
         "requestBody": {
