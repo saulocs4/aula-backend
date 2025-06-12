@@ -12,7 +12,6 @@ async function limparCarrinhoService(cart_id, user) {
     return await limparCarrinhoRepository(cart_id, user)
 }
 
-
 module.exports = {
     listarCarrinhoService,
     criarCarrinhoService,

@@ -10,14 +10,14 @@ function cartCheck(cart_id) {
 
 function listarCarrinhoItensRepository(cart_id, user, page, limit) {
     return prisma.cartItem.findMany({
-        skip: (page -1) * limit,
+        skip: (page - 1) * limit,
         take: limit,
         where: {
             cart: {
                 id: Number(cart_id),
                 user_id: user
-                }
             }
+        }
     })
 }
 
@@ -31,9 +31,9 @@ function criarCarrinhoRepository(user) {
     return prisma.cartItem.deleteMany({
         where: {
             cart: {
-                id: Number(cart_id),
-                user_id: user
-                }
+              id: Number(cart_id),
+              user_id: user
+            }
         }
     })
 }

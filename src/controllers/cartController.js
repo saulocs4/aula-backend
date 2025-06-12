@@ -17,7 +17,7 @@ async function listarItens(req, res) {
 }
 
 async function criarCarrinho(req, res) {
-    const user = req.user.id
+    const user = req.user.id 
     try {
         await criarCarrinhoService(user)
         res.status(201).json({message: 'Carrinho criado com sucesso'})
